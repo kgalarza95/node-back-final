@@ -1,0 +1,28 @@
+npm init -y
+npm install express mongoose dotenv cors morgan
+npm install --save-dev nodemon
+
+
+Dependencias explicadas:
+    express → framework web.
+    mongoose → ODM para MongoDB.
+    dotenv → para variables de entorno.
+    cors → permite conexión desde el frontend.
+    morgan → logs HTTP para desarrollo.
+    nodemon → recarga automática del servidor.
+
+Colocar en "package.json"
+"scripts": {
+  "dev": "nodemon src/server.js",
+  "start": "node src/server.js"
+}
+
+
+
+docker run -d \
+  --name mongodb-gametracker \
+  -p 27017:27017 \
+  -e MONGO_INITDB_ROOT_USERNAME=admin \
+  -e MONGO_INITDB_ROOT_PASSWORD=secret \
+  -v mongodb_data:/data/db \
+  mongo:6

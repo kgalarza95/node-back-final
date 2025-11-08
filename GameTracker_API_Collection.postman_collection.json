@@ -1,0 +1,253 @@
+{
+    "info": {
+        "name": "GameTracker API",
+        "_postman_id": "gametracker-collection",
+        "description": "Colección de endpoints para el backend de GameTracker con Node.js, Express y MongoDB",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Games",
+            "item": [
+                {
+                    "name": "Obtener todos los juegos",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/api/games",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "games"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener un juego por ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/api/games/:id",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "games",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear un juego",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"titulo\": \"The Legend of Zelda\",\n    \"genero\": \"Aventura\",\n    \"plataforma\": \"Nintendo Switch\",\n    \"a\\u00f1oLanzamiento\": 2017,\n    \"desarrollador\": \"Nintendo\",\n    \"imagenPortada\": \"https://example.com/zelda.jpg\",\n    \"descripcion\": \"Juego de aventuras y exploraci\\u00f3n\",\n    \"completado\": false\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:4000/api/games",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "games"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar un juego",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"titulo\": \"Zelda actualizado\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:4000/api/games/:id",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "games",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar un juego",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/api/games/:id",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "games",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Reviews",
+            "item": [
+                {
+                    "name": "Obtener todas las reseñas",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/api/reviews",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "reviews"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener reseñas por juego",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/api/reviews/game/:juegoId",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "reviews",
+                                "game",
+                                ":juegoId"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear una reseña",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"juegoId\": \"ID_DEL_JUEGO\",\n    \"puntuacion\": 5,\n    \"textoRese\\u00f1a\": \"Una obra maestra.\",\n    \"horasJugadas\": 40,\n    \"dificultad\": \"Normal\",\n    \"recomendaria\": true\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:4000/api/reviews",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "reviews"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar una reseña",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"puntuacion\": 4,\n    \"textoRese\\u00f1a\": \"A\\u00fan excelente, pero con mejoras.\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:4000/api/reviews/:id",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "reviews",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar una reseña",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/api/reviews/:id",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "api",
+                                "reviews",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

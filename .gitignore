@@ -1,0 +1,39 @@
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.env
+
+# === Logs ===
+logs
+*.log
+logs/*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# === Editor / Sistema ===
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# === Coverage / Tests ===
+coverage/
+.nyc_output/
+jest-test-results.json
+test-results/
+
+# === Build / Dist ===
+dist/
+build/
+
+# === Docker ===
+docker-data/
+*.tar
